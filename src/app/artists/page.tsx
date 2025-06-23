@@ -332,7 +332,7 @@ function ArtistsPageContent() {
                   <Label htmlFor="sort" className="text-sm font-medium whitespace-nowrap">
                     Sort by:
                   </Label>
-                  <Select value={sortBy} onValueChange={(value: any) => setSortBy(value)}>
+                  <Select value={sortBy} onValueChange={(value: "name" | "rating" | "price") => setSortBy(value)}>
                     <SelectTrigger className="w-36 rounded-xl border-2 border-purple-200 bg-white/80">
                       <SelectValue />
                     </SelectTrigger>

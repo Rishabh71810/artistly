@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useMemo } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Button } from '@/components/ui/button';
@@ -9,10 +9,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useApp } from '@/context/AppContext';
 import { categories, languages, priceRanges, locations } from '@/data/mockData';
-import { User, Briefcase, MapPin, DollarSign, Upload, CheckCircle, Star, Heart, Zap, Rocket } from 'lucide-react';
+import { User, Briefcase, DollarSign, Upload, CheckCircle, Star, Heart, Zap, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Custom styles for the creative theme
@@ -80,7 +80,7 @@ export default function OnboardPage() {
     setValue,
     getValues
   } = useForm<FormData>({
-    resolver: yupResolver(schema) as any,
+    resolver: yupResolver(schema) as Resolver<FormData>,
     mode: 'onBlur',
     defaultValues: {
       name: '',
@@ -161,7 +161,7 @@ export default function OnboardPage() {
 
   const nextSection = useCallback(async () => {
     const currentFields = sections[currentSection].fields;
-    const isCurrentSectionValid = await trigger(currentFields as any);
+    const isCurrentSectionValid = await trigger(currentFields as (keyof FormData)[]);
     
     if (isCurrentSectionValid) {
       setCurrentSection(prev => Math.min(prev + 1, sections.length - 1));

@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { categories } from '@/data/mockData';
-import { ArrowRight, Users, Calendar, Star, CheckCircle, Mic, Music, Gamepad2, Headphones, Guitar, Smile, Wand2, Users2 } from 'lucide-react';
-import { Metadata } from 'next';
+import { ArrowRight, Users, Calendar, Star, CheckCircle } from 'lucide-react';
 
 // Note: Metadata is handled in layout.tsx for this page
 

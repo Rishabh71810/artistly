@@ -300,7 +300,7 @@ export default function DashboardPage() {
               </div>
 
               {/* Status Filter */}
-              <Select value={statusFilter || ""} onValueChange={(value: any) => setStatusFilter(value)}>
+              <Select value={statusFilter || ""} onValueChange={(value: "all" | "pending" | "approved" | "rejected") => setStatusFilter(value)}>
                 <SelectTrigger className="border-2 border-gray-200 focus:border-indigo-500 rounded-lg">
                   <SelectValue placeholder="Filter by status" />
                 </SelectTrigger>
@@ -328,7 +328,7 @@ export default function DashboardPage() {
               </Select>
 
               {/* Sort */}
-              <Select value={sortBy || ""} onValueChange={(value: any) => setSortBy(value)}>
+              <Select value={sortBy || ""} onValueChange={(value: "submittedAt" | "name" | "rating") => setSortBy(value)}>
                 <SelectTrigger className="border-2 border-gray-200 focus:border-indigo-500 rounded-lg">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
