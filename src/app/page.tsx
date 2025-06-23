@@ -23,7 +23,7 @@ export default function HomePage() {
     },
     'Dancers': {
       emoji: '💃',
-      image: 'https://images.unsplash.com/photo-1544746504-317a6080d0cc?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=300&fit=crop&crop=center',
       gradient: 'from-orange-500/80 via-red-500/80 to-pink-600/80',
       description: 'Graceful movements that captivate',
       accentColor: 'orange'
@@ -188,7 +188,7 @@ export default function HomePage() {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         onError={(e) => {
                           const target = e.currentTarget;
-                          target.src = 'https://images.unsplash.com/photo-1514897575457-c4db467cf78e?w=400&h=300&fit=crop&crop=center';
+                          target.src = 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=center';
                         }}
                       />
                       
